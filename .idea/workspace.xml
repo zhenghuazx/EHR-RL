@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1eb5dcc7-2175-4193-a733-8b43f6d62dc3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/dqn_cvd.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dqn_diabetes.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/treatment1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitgnore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dqn.py" beforeDir="false" afterPath="$PROJECT_DIR$/dqn.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -58,7 +55,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dqn_cvd.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="488">
+            <state relative-caret-position="-7295">
               <caret line="36" column="32" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="32" />
               <folding>
                 <element signature="e#24#37#0" expanded="true" />
@@ -257,12 +254,12 @@
       <workItem from="1570546624231" duration="1690000" />
       <workItem from="1572353646993" duration="20088000" />
       <workItem from="1572545132008" duration="68970000" />
-      <workItem from="1576518768336" duration="1497000" />
+      <workItem from="1576518768336" duration="2923000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="152049000" />
+    <option name="totallyTimeSpent" value="153475000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -373,9 +370,12 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitgnore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/dqn_cvd.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="488">
+        <state relative-caret-position="-7295">
           <caret line="36" column="32" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="32" />
           <folding>
             <element signature="e#24#37#0" expanded="true" />
