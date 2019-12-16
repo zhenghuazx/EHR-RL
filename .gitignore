@@ -46,7 +46,7 @@ coverage.xml
 *.cover
 .hypothesis/
 .pytest_cache/
-
+./idea/
 # Translations
 *.mo
 *.pot
@@ -74,6 +74,9 @@ target/
 
 # pyenv
 .python-version
+./env/
+./venv/
+.DS_Store
 
 # celery beat schedule file
 celerybeat-schedule
@@ -102,3 +105,16 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+<<<<<<< HEAD
+<<<<<<< HEAD
+
+# model file
+*.h5
+
+# image file
+*.png
+
+=======
+>>>>>>> b48b775ad95ff317998ff00b347d3108af9b5c1a
+=======
+>>>>>>> b48b775ad95ff317998ff00b347d3108af9b5c1a
