@@ -74,8 +74,11 @@ target/
 
 # pyenv
 .python-version
+<<<<<<< HEAD
 ./env/
 ./venv/
+=======
+>>>>>>> b48b775ad95ff317998ff00b347d3108af9b5c1a
 
 # celery beat schedule file
 celerybeat-schedule
@@ -105,6 +108,7 @@ venv.bak/
 # mypy
 .mypy_cache/
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 # model file
 *.h5
@@ -112,5 +116,7 @@ venv.bak/
 # image file
 *.png
 
+=======
+>>>>>>> b48b775ad95ff317998ff00b347d3108af9b5c1a
 =======
 >>>>>>> b48b775ad95ff317998ff00b347d3108af9b5c1a
