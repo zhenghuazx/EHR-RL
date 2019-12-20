@@ -382,11 +382,17 @@ if __name__ == "__main__":
 
     ''' Simulation based validation
     '''
+    Use_existing_model = False
+    if Use_existing_model:
+        agent.load("./cartpole-dqn.h5")
+    else:
+        agent.save("./cartpole-dqn.h5")
+
     from sklearn.decomposition import PCA
 
     # pca = PCA(n_components=8)
-    num_neighbors = 20
-    pca = PCA(.90)
+    num_neighbors = 5
+    pca = PCA(.85)
     pca.fit(interested_tests[state_cols])
     principalComponents = pca.transform(interested_tests[state_cols])
     num_pc = principalComponents.shape[1]
@@ -417,6 +423,10 @@ if __name__ == "__main__":
     tree = BallTree(principalComponents[:, :num_pc + 1], leaf_size=1000, metric='euclidean')
     # nbrs = tree.query(principalComponents.values[unmatched_indices][:,list(range(21)) + [22]], k=10, return_distance=False)
     nbrs = tree.query(principalComponents[:,list(range(num_pc)) + [num_pc+1]], k=num_neighbors, return_distance=False)
+    from joblib import dump, load
+    dump(tree, './knn/balltree.joblib')
+    nbrs
+
 
     # rearrange the index for interested tests
     interested_tests['next_bp_systolic_raw'] = interested_tests['next_bp_systolic'] * (data['next_bp_systolic'].max() - data['next_bp_systolic'].min()) + data['next_bp_systolic'].min()
@@ -440,6 +450,16 @@ if __name__ == "__main__":
     gain_risk_ascvd = []
     gain_hemoglobin_a1c = []
     gain_reward = []
+    RL_bp_systolic = []
+    clinician_bp_systolic = []
+    RL_bp_diastolic = []
+    clinician_bp_diastolic = []
+    RL_hemoglobin_a1c = []
+    clinician_hemoglobin_a1c = []
+    RL_reward = []
+    clinician_reward = []
+    RL_risk_ascvd =[]
+    clinician_risk_ascvd = []
     for idx, v in enumerate(nbrs):
         bp_systolic = .0
         bp_diastolic = .0
@@ -449,19 +469,42 @@ if __name__ == "__main__":
         for k in v:
             bp_systolic += test_bp_dict[k]['next_bp_systolic_raw']
             bp_diastolic += test_bp_dict[k]['next_bp_diastolic_raw']
-            # risk_ascvd += test_bp_dict[k]['next_risk_ascvd_raw']
+            risk_ascvd += test_bp_dict[k]['next_risk_ascvd_raw']
             hemoglobin_a1c += test_bp_dict[k]['next_hemoglobin_a1c_raw']
             reward_ += test_bp_dict[k]['reward_raw']
-            risk_ascvd += test_bp_dict[k]['reward_ascvd_raw']
+            # risk_ascvd += test_bp_dict[k]['reward_ascvd_raw']
 
         gain_bp_systolic.append(bp_systolic / num_neighbors - test_bp_dict[idx]['next_bp_systolic_raw'])
         gain_bp_diastolic.append(bp_diastolic / num_neighbors - test_bp_dict[idx]['next_bp_diastolic_raw'])
-        # gain_risk_ascvd.append(risk_ascvd / num_neighbors - test_bp_dict[idx]['next_risk_ascvd_raw'])
+        gain_risk_ascvd.append(risk_ascvd / num_neighbors - test_bp_dict[idx]['next_risk_ascvd_raw'])
         gain_hemoglobin_a1c.append(hemoglobin_a1c / num_neighbors - test_bp_dict[idx]['next_hemoglobin_a1c_raw'])
         gain_reward.append(reward_ / num_neighbors - test_bp_dict[idx]['reward_raw'])
-        gain_risk_ascvd.append(risk_ascvd / num_neighbors - test_bp_dict[idx]['reward_ascvd_raw'])
+        # gain_risk_ascvd.append(risk_ascvd / num_neighbors - test_bp_dict[idx]['reward_ascvd_raw'])
+
+        RL_bp_systolic.append(bp_systolic / num_neighbors)
+        clinician_bp_systolic.append(test_bp_dict[idx]['next_bp_systolic_raw'])
+
+        RL_bp_diastolic.append(bp_diastolic / num_neighbors)
+        clinician_bp_diastolic.append(test_bp_dict[idx]['next_bp_diastolic_raw'])
+
+        RL_risk_ascvd.append(risk_ascvd / num_neighbors)
+        clinician_risk_ascvd.append(test_bp_dict[idx]['next_risk_ascvd_raw'])
+
+        RL_hemoglobin_a1c.append(hemoglobin_a1c / num_neighbors)
+        clinician_hemoglobin_a1c.append(test_bp_dict[idx]['next_hemoglobin_a1c_raw'])
+
+        RL_reward.append(reward_ / num_neighbors)
+        clinician_reward.append(test_bp_dict[idx]['reward_raw'])
+        # RL_risk_ascvd.append(risk_ascvd / num_neighbors)
+        # clinician_risk_ascvd.append(test_bp_dict[idx]['reward_ascvd_raw'])
 
     print(np.mean(gain_bp_systolic))
+    print(np.mean(gain_bp_diastolic))
+    print(np.mean(gain_risk_ascvd))
+    print(np.mean(gain_hemoglobin_a1c))
+    print(np.mean(gain_reward))
+
+    print(np.mean(RL_bp_systolic))
     print(np.mean(gain_bp_diastolic))
     print(np.mean(gain_risk_ascvd))
     print(np.mean(gain_hemoglobin_a1c))
