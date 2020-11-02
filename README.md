@@ -32,7 +32,7 @@ The research was conducted by Hua Zheng and supervised by Professor Wei Xie, Pro
 |                                                                                                        | RL-CVD            | Clinician's prescription | P-value |
 | FHS (Mean(SE))                                                                                         | 13.65 (0.26)      | 17.18 (0.36)             | <0.001  |
 | FHS > 20% (N(%))                                                                                       | 237 (25.1)        | 299 (31.6)               | <0.001  |
-| <div align="center">__RL-multimorbidity_                                                               |                   |                          |         |
+| <div align="center"> __RL-multimorbidity__                                                             |                   |                          |         |
 | Encounters for which algorithm’s recommendation differed from observed Clinician's prescription (N(%)) | 102,184 (28.9)    |                          |         |
 |                                                                                                        | RL-multimorbidity | Clinician's prescription | P-value |
 | A1c (Mean(SE))                                                                                         | 7.14 (0.003)      | 7.19 (0.005)             | <0.001  |
