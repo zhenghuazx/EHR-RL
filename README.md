@@ -1,2 +1,2 @@
 # EHR-RL
-Research code repo for prescription optimization based on EHR
+Repository for RL based prescriptive algorithm in Professor Wei Xie's research group.
