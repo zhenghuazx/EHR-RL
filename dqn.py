@@ -17,6 +17,8 @@ import collections
 from lib.treatments import hypertension_treatments, dm_treatment, ascvd_treatment, hypertension_treatments_history, dm_treatment_history
 from ascvd_risk import framingham_ascvd_risk
 from lib.DQN import DQNAgent
+from lib.next_state_cols import next_state_cols 
+
 diagnosis_reward = False
 EPISODES = 16000
 
@@ -127,15 +129,10 @@ if __name__ == "__main__":
 
     # %%
     state_cols = [s[5:] for s in next_state_cols]
-    # state_cols = list(set(data.columns) - set(full_label_cols) - {'target'} - set(
-    #     ['reward', 'reward_bp', 'reward_ascvd', 'reward_diabetes', 'risk_ascvd', 'next_risk_ascvd']) - set(
-    #     ['study_id', 'encounter_dt_ran']) - set(next_state_cols))
     if diagnosis_reward:
         state_cols = state_cols - (['CVD', 'days_to_CVD'])
 
-    # next_state_cols = ['next_' + s for s in list(state_cols)]
     patients_column = data[['study_id', 'encounter_dt_ran']]
-    #data = data.drop(excluded, axis=1)
     _temp = data.drop('target', axis=1).max(skipna=True) - data.drop('target', axis=1).min(skipna=True)
     _temp[data.drop('target', axis=1).columns[(_temp == 0).values]] = 1.0
     normalized_df = (data.drop(['target'], axis=1) - data.drop('target', axis=1).min(skipna=True)) / _temp
@@ -151,10 +148,7 @@ if __name__ == "__main__":
 
     state_size = len(state_cols)
     action_size = len(target_column_renames)
-    # loss_weights = loss_weight(data)
-    #class_weights = class_weight.compute_class_weight('balanced',
-    #                                                  np.unique(data['target'].values),
-    #                                                  data['target'].values)
+
     agent = DQNAgent(state_size, action_size, target_column_renames, state_cols, reward_cols, next_state_cols)#, class_weights, True)
     #agent.load("./model/3d:256-512-256-episodes:20000--dqn-mse-target_treatment:{}.h5".format(target_treatment))
     done = False
@@ -165,20 +159,14 @@ if __name__ == "__main__":
     interested_tests = test  # test[test[targets].apply(lambda x: sum(x) > 0, axis=1)]
     sample_patient = False
     for e in range(EPISODES):
-
-        # patients_trajectories = random.sample(patients_set, batch_size)
         if sample_patient:
             patient = random.sample(patients_set, 1)
             minibatch = interested_train[interested_train['study_id'] == patient]
         else:
             minibatch = interested_train.sample(batch_size)
 
-        # minibatch = random.sample(agent.memory, batch_size)
         if e % episodes_till_target_update:
             agent.update_target()
-
-        # for visit in minibatch:
-        #     loss = agent.replay(minibatch[visit], True)
 
         agent.learning_rate = agent.learning_rate * (1 - agent.learning_rate_decay)
         loss = agent.replay(minibatch, True)
