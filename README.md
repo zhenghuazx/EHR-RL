@@ -49,4 +49,4 @@ Both AI and doctor has similar prescriotive distribution but AI tends to prescri
 ![Prescriptive Distribution](https://github.com/zhenghuazx/EHR-RL/blob/master/distribution3.svg)
 
 ## Consistently performance acrosss different groups
-
+![Prescriptive Distribution](https://github.com/zhenghuazx/EHR-RL/blob/master/subgroup_table.png)
