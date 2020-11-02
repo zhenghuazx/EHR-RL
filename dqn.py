@@ -59,7 +59,7 @@ def loss_weight(data):
     return dict([[str(k), v / data[['target']].shape[0]] for k, v in loss_weights.items()])
 
 if __name__ == "__main__":
-    # Select the target disease('hypertension', 'diabetes', 'ascvd'), if use "None" represent multimorbidity
+    # Select the target disease('hypertension', 'diabetes', 'ascvd'), use "None" represent multimorbidity
     target_treatment = None
     action_size = 100
 
