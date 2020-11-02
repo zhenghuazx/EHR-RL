@@ -16,13 +16,13 @@ The research was conducted by Hua Zheng and supervised by Professor Wei Xie, Pro
 * CONCLUSIONS: A personalized reinforcement learning prescriptive framework for type 2 diabetes yielded high concordance with clinicians’ prescriptions and substantial improvements in glycemia, blood pressure, cardiovascular disease risk outcomes.
 
 # Main Results
-| *RL-glycemia*                                                                                          |                   |                          |         |
+| __RL-glycemia__                                                                                        |                   |                          |         |
 |--------------------------------------------------------------------------------------------------------|-------------------|--------------------------|---------|
 | Encounters for which algorithm’s recommendation differed from observed Clinician's prescription (N(%)) | 15,578 (13.9)     |                          |         |
 |                                                                                                        | RL-glycemia       | Clinician's prescription | P-value |
 | A1c (Mean(SE))                                                                                         | 7.80 (0.01)       | 8.09 (0.01)              | <0.001  |
 | A1c > 8% (N(%))                                                                                        | 5,421 (34.8)      | 6,617 (42.5)             | <0.001  |
-| *RL-Blood Pressure*                                                                                    |                   |                          |         |
+| __RL-Blood Pressure__                                                                                  |                   |                          |         |
 | Encounters for which algorithm’s recommendation differed from observed Clinician's prescription (N(%)) | 20,251 (17.1)     |                          |         |
 |                                                                                                        | RL-BP             | Clinician's prescription | P-value |
 | SBP(Mean(SE))                                                                                          | 131.77(0.06)      | 132.35 (0.11)            | <0.001  |
@@ -32,7 +32,7 @@ The research was conducted by Hua Zheng and supervised by Professor Wei Xie, Pro
 |                                                                                                        | RL-CVD            | Clinician's prescription | P-value |
 | FHS (Mean(SE))                                                                                         | 13.65 (0.26)      | 17.18 (0.36)             | <0.001  |
 | FHS > 20% (N(%))                                                                                       | 237 (25.1)        | 299 (31.6)               | <0.001  |
-| *RL- multimorbidity*                                                                                   |                   |                          |         |
+| __RL-multimorbidity__                                                                                  |                   |                          |         |
 | Encounters for which algorithm’s recommendation differed from observed Clinician's prescription (N(%)) | 102,184 (28.9)    |                          |         |
 |                                                                                                        | RL-multimorbidity | Clinician's prescription | P-value |
 | A1c (Mean(SE))                                                                                         | 7.14 (0.003)      | 7.19 (0.005)             | <0.001  |
