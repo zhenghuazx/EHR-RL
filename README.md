@@ -45,4 +45,4 @@ RL based prescriptions significantly improves patients' health outcomes and redu
 | FHS > 20% (N(%))                                                                                       | 48,283 (47.3)     | 55,957 (54.8)            | <0.001  |
 
 ## Less prescriptions
-![Image of Yaktocat](https://github.com/zhenghuazx/EHR-RL/distribution3.svg)
+![Prescriptive Distribution](https://github.com/zhenghuazx/EHR-RL/blob/master/distribution3.svg)
