@@ -16,6 +16,9 @@ The research was conducted by Hua Zheng and supervised by Professor Wei Xie, Pro
 * CONCLUSIONS: A personalized reinforcement learning prescriptive framework for type 2 diabetes yielded high concordance with clinicians’ prescriptions and substantial improvements in glycemia, blood pressure, cardiovascular disease risk outcomes.
 
 # Main Results
+## High consistency with current clinical practice
+By default, reinforcement learning, attempting to optimize the health outcomes, might result in a significantly different reccommendations from clinicians. However, our RL recommendations showed high levels of concordance with clinicians’ prescriptions for single outcome optimizations of glycemia, blood pressure and CVD risk control. This demonstrates the feasibility of using RL for T2DM management and indicates that clinicians make near-optimal decisions with regard to single-outcome management. 
+
 ## Higher Efficacy
 RL based prescriptions significantly improves patients' health outcomes and reduce the number of patients in serious conditions, i.e. SBP > 140 mmHg HbA1c > 8% and FHS CVD risk > 20%.
 | __RL-glycemia__                                                                                        |                   |                          |         |
