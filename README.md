@@ -44,4 +44,5 @@ RL based prescriptions significantly improves patients' health outcomes and redu
 | FHS (Mean(SE))                                                                                         | 21.89 (0.04)      | 25.61 (0.05)             | <0.001  |
 | FHS > 20% (N(%))                                                                                       | 48,283 (47.3)     | 55,957 (54.8)            | <0.001  |
 
-## Less prescriptions needed
+## Less prescriptions
+![Image of Yaktocat](https://github.com/zhenghuazx/EHR-RL/distribution3.svg)
