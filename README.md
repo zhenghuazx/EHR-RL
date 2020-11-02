@@ -16,32 +16,28 @@ The research was conducted by Hua Zheng and supervised by Professor Wei Xie, Pro
 * CONCLUSIONS: A personalized reinforcement learning prescriptive framework for type 2 diabetes yielded high concordance with clinicians’ prescriptions and substantial improvements in glycemia, blood pressure, cardiovascular disease risk outcomes.
 
 # Main Results
-| RL-glycemia |
-| --- |
-| Encounters for which algorithm&#39;s recommendation differed from observed Clinician&#39;s prescription (N(%)) | 15,578 (13.9) |
-|
- | RL-glycemia | Clinician&#39;s prescription | P-value |
-| A1c (Mean(SE)) | 7.80 (0.01) | 8.09 (0.01) | \&lt;0.001 |
-| A1c \&gt; 8% (N(%)) | 5,421 (34.8) | 6,617 (42.5) | \&lt;0.001 |
-| RL-BP |
-| Encounters for which algorithm&#39;s recommendation differed from observed Clinician&#39;s prescription (N(%)) | 20,251 (17.1) |
-|
- | RL-BP | Clinician&#39;s prescription | P-value |
-| SBP(Mean(SE)) | 131.77(0.06) | 132.35 (0.11) | \&lt;0.001 |
-| SBP \&gt; 140 mmHg (N(%)) | 3,256 (16.1) | 5,390 (26.6) | \&lt;0.001 |
-| RL-CVD |
-| Encounters for which algorithm&#39;s recommendation differed from observed Clinician&#39;s prescription (N(%)) | 946 (1.6) |
-|
- | RL-CVD | Clinician&#39;s prescription | P-value |
-| FHS (Mean(SE)) | 13.65 (0.26) | 17.18 (0.36) | \&lt;0.001 |
-| FHS \&gt; 20% (N(%)) | 237 (25.1) | 299 (31.6) | \&lt;0.001 |
-| RL- multimorbidity |
-| Encounters for which algorithm&#39;s recommendation differed from observed Clinician&#39;s prescription (N(%)) | 102,184 (28.9) |
-|
- | RL-multimorbidity | Clinician&#39;s prescription | P-value |
-| A1c (Mean(SE)) | 7.14 (0.003) | 7.19 (0.005) | \&lt;0.001 |
-| A1c \&gt; 8% (N(%)) | 16,436 (16.08) | 20,879 (20.43) | \&lt;0.001 |
-| SBP (Mean(SE)) | 129.40 (0.03) | 129.58 (0.05) | \&lt;0.001 |
-| SBP \&gt; 140 mmHg (N(%)) | 9,800 (9.59) | 20,957 (20.51) | \&lt;0.001 |
-| FHS (Mean(SE)) | 21.89 (0.04) | 25.61 (0.05) | \&lt;0.001 |
-| FHS \&gt; 20% (N(%)) | 48,283 (47.3) | 55,957 (54.8) | \&lt;0.001 |
+| RL-glycemia                                                                                            |                   |                          |         |
+|--------------------------------------------------------------------------------------------------------|-------------------|--------------------------|---------|
+| Encounters for which algorithm’s recommendation differed from observed Clinician's prescription (N(%)) | 15,578 (13.9)     |                          |         |
+|                                                                                                        | RL-glycemia       | Clinician's prescription | P-value |
+| A1c (Mean(SE))                                                                                         | 7.80 (0.01)       | 8.09 (0.01)              | <0.001  |
+| A1c > 8% (N(%))                                                                                        | 5,421 (34.8)      | 6,617 (42.5)             | <0.001  |
+| RL-BP                                                                                                  |                   |                          |         |
+| Encounters for which algorithm’s recommendation differed from observed Clinician's prescription (N(%)) | 20,251 (17.1)     |                          |         |
+|                                                                                                        | RL-BP             | Clinician's prescription | P-value |
+| SBP(Mean(SE))                                                                                          | 131.77(0.06)      | 132.35 (0.11)            | <0.001  |
+| SBP > 140 mmHg (N(%))                                                                                  | 3,256 (16.1)      | 5,390 (26.6)             | <0.001  |
+| RL-CVD                                                                                                 |                   |                          |         |
+| Encounters for which algorithm’s recommendation differed from observed Clinician's prescription (N(%)) | 946 (1.6)         |                          |         |
+|                                                                                                        | RL-CVD            | Clinician's prescription | P-value |
+| FHS (Mean(SE))                                                                                         | 13.65 (0.26)      | 17.18 (0.36)             | <0.001  |
+| FHS > 20% (N(%))                                                                                       | 237 (25.1)        | 299 (31.6)               | <0.001  |
+| RL- multimorbidity                                                                                     |                   |                          |         |
+| Encounters for which algorithm’s recommendation differed from observed Clinician's prescription (N(%)) | 102,184 (28.9)    |                          |         |
+|                                                                                                        | RL-multimorbidity | Clinician's prescription | P-value |
+| A1c (Mean(SE))                                                                                         | 7.14 (0.003)      | 7.19 (0.005)             | <0.001  |
+| A1c > 8% (N(%))                                                                                        | 16,436 (16.08)    | 20,879 (20.43)           | <0.001  |
+| SBP (Mean(SE))                                                                                         | 129.40 (0.03)     | 129.58 (0.05)            | <0.001  |
+| SBP > 140 mmHg (N(%))                                                                                  | 9,800 (9.59)      | 20,957 (20.51)           | <0.001  |
+| FHS (Mean(SE))                                                                                         | 21.89 (0.04)      | 25.61 (0.05)             | <0.001  |
+| FHS > 20% (N(%))                                                                                       | 48,283 (47.3)     | 55,957 (54.8)            | <0.001  |
