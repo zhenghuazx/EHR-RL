@@ -109,22 +109,10 @@ if __name__ == "__main__":
     target_set = list([i[0] for i in counter.most_common(action_size)])
     target_replacement = dict(zip(iter(target_set), range(action_size)))
     target_column_renames = ['target' + str(i) for i in range(action_size)]
-    # select visits that are only target_treatment
-    # visits_to_remove = data[['study_id', 'encounter_dt_ran']][data.target.apply(lambda x: x not in target_set)]
-    # merged = data[['study_id', 'encounter_dt_ran']].merge(visits_to_remove, indicator=True, how='outer')
-    # merged = merged[merged['_merge'] == 'left_only']
 
     data = data[data.target.apply(lambda x: x in target_set)]
     data['target'] = data['target'].replace(target_replacement)
     reward_cols = ['reward']
-
-    # %% generate the association between diseases and aggregated actions
-    # temp_dat = data[:100000][['target', 'reward']]
-    # temp_dat['hypertension'] = data[label_cols][:100000].apply(lambda x: map_to_disease_category(x, 'hypertension', label_cols), axis=1)
-    # temp_dat['diabetes'] = data[label_cols][:100000].apply(lambda x: map_to_disease_category(x, 'diabetes', label_cols), axis=1)
-    # temp_dat['ascvd'] = data[label_cols][:100000].apply(lambda x: map_to_disease_category(x, 'ascvd', label_cols), axis=1)
-    # temp_dat.drop('reward', axis=1).drop_duplicates().count()
-
 
 
     # %%
