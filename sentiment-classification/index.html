@@ -123,11 +123,11 @@ function classify()
  {
     const age  = document.getElementById("age").value
     if(age !== null && age !== '') {
-        state_values[state_index['age']] = (age - state_weight[state_index['age']][1]) / tate_weight[state_index['age']][0]
+        state_values[state_index['age']] = (age - state_weight[state_index['age']][1]) / state_weight[state_index['age']][0]
     }
     const smoke  = document.getElementById("smoke").value
     if(smoke !== null && smoke !== '') {
-        state_values[state_index['smoke']] = (smoke - state_weight[state_index['smoke']][1]) / tate_weight[state_index['smoke']][0]
+        state_values[state_index['smoke']] = (smoke - state_weight[state_index['smoke']][1]) / state_weight[state_index['smoke']][0]
     }
     const sex  = document.getElementById("sex(male)").value
     if(sex !== null && sex !== '') {
