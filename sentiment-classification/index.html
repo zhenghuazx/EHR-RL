@@ -23,18 +23,48 @@ async function loadDict()
   dataType: 'text',}).done(success);
 }
 
+async function loadDict()
+{
+  await $.ajax({
+  url: 'input.csv',
+  dataType: 'text',}).done(success2);
+}
+ 
+function success2(data)
+{
+    var wd_idx = new Object();
+    var weights = new Object();
+    lst = data.split(/\r?\n|\r/)
+    var initial_values = new Array(lst.length)
+    for(var i = 0 ; i < lst.length ;i++){
+        parsed_values = (lst[i]).split('\t')
+        state = parsed_values[0]
+        max_value = parsed_values[1]
+        min_value = parsed_values[2]
+        avg_value = parsed_values[3]
+        initial_values[i] = (parseFloat(avg_value) - parseFloat(min_value)) / parseFloat(max_value)
+        weights[i] = [max_value, min_value, avg_value]
+        wd_idx[state] = i
+        
+    }
+    state_weight = weights
+    state_index = wd_idx //state name -> index
+    state_values = initial_values // array(state value)
+}
+
 function success(data)
 {
     var wd_idx = new Object();
     lst = data.split(/\r?\n|\r/)
 
     for(var i = 0 ; i < lst.length ;i++){
-        key = (lst[i]).split(',')[0]
-        value = (lst[i]).split(',')[1]
+        var parsed_values = (lst[i]).split('\t')
+        key = parseInt(parsed_values[0])
+        value = parsed_values[1]
         
         if(key == "")
             continue
-        wd_idx[key] = parseInt(value)
+        wd_idx[key] = value
         
     }
     
@@ -58,6 +88,23 @@ function create_sequences(txt)
     return seq
 }
 
+function indexOfMax(arr) {
+    if (arr.length === 0) {
+        return -1;
+    }
+
+    var max = arr[0];
+    var maxIndex = 0;
+
+    for (var i = 1; i < arr.length; i++) {
+        if (arr[i] > max) {
+            maxIndex = i;
+            max = arr[i];
+        }
+    }
+
+    return maxIndex;
+}
 
 async function init()
 {
@@ -74,50 +121,147 @@ async function init()
 function classify()
  {
     const age  = document.getElementById("age").value
+    if(age !== null && age !== '') {
+        state_values[state_index['age']] = (age - state_weight[state_index['age']][1]) / tate_weight[state_index['age']][0]
+    }
     const smoke  = document.getElementById("smoke").value
+    if(smoke !== null && smoke !== '') {
+        state_values[state_index['smoke']] = (smoke - state_weight[state_index['smoke']][1]) / tate_weight[state_index['smoke']][0]
+    }
     const sex  = document.getElementById("sex(male)").value
+    if(sex !== null && sex !== '') {
+        state_values[state_index['sex_male']] = (sex - state_weight[state_index['sex_male']][1]) /state_weight[state_index['sex_male']][0]
+    }
     const creatinine  = document.getElementById("creatinine").value
+    if(creatinine !== null && creatinine !== '') {
+        state_values[state_index['creatinine']] = (creatinine - state_weight[state_index['creatinine']][1]) / state_weight[state_index['creatinine']][0]
+    }
     const creatinine_max  = document.getElementById("creatinine_max").value
+    if(creatinine_max !== null && creatinine_max !== '') {
+        state_values[state_index['creatinine_max']] = (creatinine_max - state_weight[state_index['creatinine_max']][1]) / state_weight[state_index['creatinine_max']][0]
+    }
     const creatinine_min  = document.getElementById("creatinine_min").value
+    if(creatinine_min !== null && creatinine_min !== '') {
+        state_values[state_index['creatinine_min']] = (creatinine_min - state_weight[state_index['creatinine_min']][1]) / state_weight[state_index['creatinine_min']][0]
+    }
     const bmi  = document.getElementById("bmi").value
+    if(bmi !== null && bmi !== '') {
+        state_values[state_index['bmi']] = (bmi - state_weight[state_index['bmi']][1]) / state_weight[state_index['bmi']][0]
+    }
     const bmi_max  = document.getElementById("bmi_max").value
+    if(bmi_max !== null && bmi_max !== '') {
+        state_values[state_index['bmi_max']] = (bmi_max - state_weight[state_index['bmi_max']][1]) / state_weight[state_index['bmi_max']][0]
+    }
     const bmi_min  = document.getElementById("bmi_min").value
+    if(bmi_min !== null && bmi_min !== '') {
+        state_values[state_index['bmi_min']] = (bmi_min - state_weight[state_index['bmi_min']][1]) / state_weight[state_index['bmi_min']][0]
+    }
     const hemoglobin_a1c  = document.getElementById("hemoglobin_a1c").value
+    if(hemoglobin_a1c !== null && hemoglobin_a1c !== '') {
+        state_values[state_index['hemoglobin_a1c']] = (hemoglobin_a1c - state_weight[state_index['hemoglobin_a1c']][1]) / state_weight[state_index['hemoglobin_a1c']][0]
+    }
     const hemoglobin_a1c_max  = document.getElementById("hemoglobin_a1c_max").value
+    if(hemoglobin_a1c_max !== null && hemoglobin_a1c_max !== '') {
+        state_values[state_index['hemoglobin_a1c_max']] = (hemoglobin_a1c_max - state_weight[state_index['hemoglobin_a1c_max']][1]) / state_weight[state_index['hemoglobin_a1c_max']][0]
+    }
     const hemoglobin_a1c_min  = document.getElementById("hemoglobin_a1c_min").value
+    if(hemoglobin_a1c_min !== null && hemoglobin_a1c_min !== '') {
+        state_values[state_index['hemoglobin_a1c_min']] = (hemoglobin_a1c_min - state_weight[state_index['hemoglobin_a1c_min']][1]) / state_weight[state_index['hemoglobin_a1c_min']][0]
+    }
     const bp_diastolic  = document.getElementById("bp_diastolic").value
+    if(bp_diastolic !== null && bp_diastolic !== '') {
+        state_values[state_index['bp_diastolic']] = (bp_diastolic - state_weight[state_index['bp_diastolic']][1]) / state_weight[state_index['bp_diastolic']][0]
+    }
     const bp_diastolic_max  = document.getElementById("bp_diastolic_max").value
+    if(bp_diastolic_max !== null && bp_diastolic_max !== '') {
+        state_values[state_index['bp_diastolic_max']] = (bp_diastolic_max - state_weight[state_index['bp_diastolic_max']][1]) / state_weight[state_index['bp_diastolic_max']][0]
+    }
     const bp_diastolic_min  = document.getElementById("bp_diastolic_min").value
+    if(bp_diastolic_min !== null && bp_diastolic_min !== '') {
+        state_values[state_index['bp_diastolic_min']] = (bp_diastolic_min - state_weight[state_index['bp_diastolic_min']][1]) / state_weight[state_index['bp_diastolic_min']][0]
+    }
     const bp_systolic  = document.getElementById("bp_systolic").value
+    if(bp_systolic !== null && bp_systolic !== '') {
+        state_values[state_index['bp_systolic']] = (bp_systolic - state_weight[state_index['bp_systolic']][1]) / state_weight[state_index['bp_systolic']][0]
+    }
     const bp_systolic_max  = document.getElementById("bp_systolic_max").value
+    if(bp_systolic_max !== null && bp_systolic_max !== '') {
+        state_values[state_index['bp_systolic_max']] = (bp_systolic_max - state_weight[state_index['bp_systolic_max']][1]) / state_weight[state_index['bp_systolic_max']][0]
+    }
     const bp_systolic_min  = document.getElementById("bp_systolic_min").value
+    if(bp_systolic_min !== null && bp_systolic_min !== '') {
+        state_values[state_index['bp_systolic_min']] = (bp_systolic_min - state_weight[state_index['bp_systolic_min']][1]) / state_weight[state_index['bp_systolic_min']][0]
+    }
     const ldl_cholesterol  = document.getElementById("ldl_cholesterol").value
+    if(ldl_cholesterol !== null && ldl_cholesterol !== '') {
+        state_values[state_index['ldl_cholesterol']] = (ldl_cholesterol - state_weight[state_index['ldl_cholesterol']][1]) / state_weight[state_index['ldl_cholesterol']][0]
+    }
     const ldl_cholesterol_max  = document.getElementById("ldl_cholesterol_max").value
+    if(ldl_cholesterol_max !== null && ldl_cholesterol_max !== '') {
+        state_values[state_index['ldl_cholesterol_max']] = (ldl_cholesterol_max - state_weight[state_index['ldl_cholesterol_max']][1]) / state_weight[state_index['ldl_cholesterol_max']][0]
+    }
     const ldl_cholesterol_min  = document.getElementById("ldl_cholesterol_min").value
+    if(ldl_cholesterol_min !== null && ldl_cholesterol_min !== '') {
+        state_values[state_index['ldl_cholesterol_min']] = (ldl_cholesterol_min - state_weight[state_index['ldl_cholesterol_min']][1]) / state_weight[state_index['ldl_cholesterol_min']][0]
+    }
     const hdl_cholesterol  = document.getElementById("hdl_cholesterol").value
+    if(hdl_cholesterol !== null && hdl_cholesterol !== '') {
+        state_values[state_index['hdl_cholesterol']] = (hdl_cholesterol - state_weight[state_index['hdl_cholesterol']][1]) / state_weight[state_index['hdl_cholesterol']][0]
+    }
     const hdl_cholesterol_max  = document.getElementById("hdl_cholesterol_max").value
+    if(hdl_cholesterol_max !== null && hdl_cholesterol_max !== '') {
+        state_values[state_index['hdl_cholesterol_max']] = (hdl_cholesterol_max - state_weight[state_index['hdl_cholesterol_max']][1]) / state_weight[state_index['hdl_cholesterol_max']][0]
+    }
     const hdl_cholesterol_min  = document.getElementById("hdl_cholesterol_min").value
+    if(hdl_cholesterol_min !== null && hdl_cholesterol_min !== '') {
+        state_values[state_index['hdl_cholesterol_min']] = (hdl_cholesterol_min - state_weight[state_index['hdl_cholesterol_min']][1]) / state_weight[state_index['hdl_cholesterol_min']][0]
+    }
     const triglycerides  = document.getElementById("triglycerides").value
+    if(triglycerides !== null && triglycerides !== '') {
+        state_values[state_index['triglycerides']] = (triglycerides - state_weight[state_index['triglycerides']][1]) / state_weight[state_index['triglycerides']][0]
+    }
     const triglycerides_max  = document.getElementById("triglycerides_max").value
+    if(triglycerides_max !== null && triglycerides_max !== '') {
+        state_values[state_index['triglycerides_max']] = (triglycerides_max - state_weight[state_index['triglycerides_max']][1]) / state_weight[state_index['triglycerides_max']][0]
+    }
     const triglycerides_min  = document.getElementById("triglycerides_min").value
+    if(triglycerides_min !== null && triglycerides_min !== '') {
+        state_values[state_index['triglycerides_min']] = (triglycerides_min - state_weight[state_index['triglycerides_min']][1]) / state_weight[state_index['triglycerides_min']][0]
+    }
     const cholesterol_total  = document.getElementById("cholesterol_total").value
+    if(cholesterol_total !== null && cholesterol_total !== '') {
+        state_values[state_index['cholesterol,_total']] = (cholesterol_total - state_weight[state_index['cholesterol,_total']][1]) / state_weight[state_index['cholesterol,_total']][0]
+    }
     const cholesterol_total_max  = document.getElementById("cholesterol_total_max").value
+    if(cholesterol_total_max !== null && cholesterol_total_max !== '') {
+        state_values[state_index['cholesterol,_total_max']] = (cholesterol_total_max - state_weight[state_index['cholesterol,_total_max']][1]) / state_weight[state_index['cholesterol,_total_max']][0]
+    }
     const cholesterol_total_min  = document.getElementById("cholesterol_total_min").value
+    if(cholesterol_total_min !== null && cholesterol_total_min !== '') {
+        state_values[state_index['cholesterol,_total_min']] = (cholesterol_total_min - state_weight[state_index['cholesterol,_total_min']][1]) / state_weight[state_index['cholesterol,_total_min']][0]
+    }
     const time_last_vist  = document.getElementById("time_last_vist").value
+    if(time_last_vist !== null && time_last_vist !== '') {
+        state_values[state_index['time_last_vist']] = (time_last_vist - state_weight[state_index['time_last_vist']][1]) / state_weight[state_index['time_last_vist']][0]
+    }
     const time_to_first_visit  = document.getElementById("time_to_first_visit").value
+    if(time_to_first_visit !== null && time_to_first_visit !== '') {
+        state_values[state_index['time_to_first_visit']] = (time_last_vist - state_weight[state_index['time_to_first_visit']][1]) / state_weight[state_index['time_to_first_visit']][0]
+    }
     
-    const seq = create_sequences(txt) 
-    let input = tf.tensor(seq)
+//     const seq = create_sequences(txt) 
+    let input = tf.tensor(state_values)
     input = input.expandDims(0)
     pred = model.predict(input)
     result = pred.dataSync()[0]
-    if (result > 0.5)
-     document.getElementById('result').innerHTML = 'Positive'
-    else 
-     document.getElementById('result').innerHTML = 'Negative'
+    const output = word_index[indexOfMax(result)]
+     document.getElementById('result').innerHTML = output
  }
 var model ; 
 var word_index = undefined
+var state_values = undefined
+var state_index = undefined
+var state_weight = undefined
 window.onload = function (){
   init()
 }
