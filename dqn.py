@@ -14,8 +14,7 @@ from sklearn.model_selection import train_test_split
 import shap
 from scipy import stats
 import collections
-from lib.treatments import hypertension_treatments, dm_treatment, ascvd_treatment, hypertension_treatments_history, dm_treatment_history
-from ascvd_risk import framingham_ascvd_risk
+from lib.treatments import hypertension_treatments, dm_treatment, ascvd_treatment, hypertension_treatments_history, dm_treatment_history, framingham_ascvd_risk
 from lib.DQN import DQNAgent
 from lib.next_state_cols import next_state_cols 
 
