@@ -22,23 +22,23 @@ By default, reinforcement learning, attempting to optimize the health outcomes, 
 ## Higher Efficacy
 RL based prescriptions significantly improves patients' health outcomes and reduce the number of patients in serious conditions, i.e. SBP > 140 mmHg HbA1c > 8% and FHS CVD risk > 20%.
 
-| __RL-glycemia__                                                                                        |                   |                          |         |
+| :__RL-glycemia__:                                                                                       |                   |                          |         |
 |--------------------------------------------------------------------------------------------------------|-------------------|--------------------------|---------|
 | Encounters for which algorithm’s recommendation differed from observed Clinician's prescription (N(%)) | 15,578 (13.9)     |                          |         |
 |                                                                                                        | RL-glycemia       | Clinician's prescription | P-value |
 | A1c (Mean(SE))                                                                                         | 7.80 (0.01)       | 8.09 (0.01)              | <0.001  |
 | A1c > 8% (N(%))                                                                                        | 5,421 (34.8)      | 6,617 (42.5)             | <0.001  |
-| <div align="center"> __RL-Blood Pressure__                                                             |                   |                          |         |
+| :__RL-Blood Pressure__:                                                            |                   |                          |         |
 | Encounters for which algorithm’s recommendation differed from observed Clinician's prescription (N(%)) | 20,251 (17.1)     |                          |         |
 |                                                                                                        | RL-BP             | Clinician's prescription | P-value |
 | SBP(Mean(SE))                                                                                          | 131.77(0.06)      | 132.35 (0.11)            | <0.001  |
 | SBP > 140 mmHg (N(%))                                                                                  | 3,256 (16.1)      | 5,390 (26.6)             | <0.001  |
-| RL-CVD                                                                                                 |                   |                          |         |
+| :__RL-CVD__:                                                                                           |                   |                          |         |
 | Encounters for which algorithm’s recommendation differed from observed Clinician's prescription (N(%)) | 946 (1.6)         |                          |         |
 |                                                                                                        | RL-CVD            | Clinician's prescription | P-value |
 | FHS (Mean(SE))                                                                                         | 13.65 (0.26)      | 17.18 (0.36)             | <0.001  |
 | FHS > 20% (N(%))                                                                                       | 237 (25.1)        | 299 (31.6)               | <0.001  |
-| <div align="center"> __RL-multimorbidity__                                                             |                   |                          |         |
+| :__RL-multimorbidity__:                                                                                |                   |                          |         |
 | Encounters for which algorithm’s recommendation differed from observed Clinician's prescription (N(%)) | 102,184 (28.9)    |                          |         |
 |                                                                                                        | RL-multimorbidity | Clinician's prescription | P-value |
 | A1c (Mean(SE))                                                                                         | 7.14 (0.003)      | 7.19 (0.005)             | <0.001  |
