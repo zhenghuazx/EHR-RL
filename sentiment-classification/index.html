@@ -252,8 +252,8 @@ function classify()
     input = input.expandDims(0)
     pred = model.predict(input)
     result = pred.dataSync()
-    const output = word_index[indexOfMax(result)]
-     document.getElementById('result').innerHTML = output
+    const output = word_index[indexOfMax(result)].replace(/_/g, " ")
+    document.getElementById('result').innerHTML = output
  }
 var model ; 
 var word_index = undefined
@@ -268,69 +268,70 @@ window.onload = function (){
  <body>
   <p id = "status"></p>
   <p>Enter a movie review for instance 'awesome/horrible movie' </p> <br>
-  <input id = 'age' type="number" name="age"> 
-     
-  <input id = 'smoke' type="number" name="smoke"> 
-     
-  <input id = 'sex(male)' type="number" name="sex(male)"> 
-     
-  <input id = 'creatinine' type="number" name="creatinine"> 
-     
-  <input id = 'creatinine_max' type="number" name="creatinine_max"> 
-     
-  <input id = 'creatinine_min' type="number" name="creatinine_min"> 
-     
-  <input id = 'bmi' type="number" name="bmi"> 
-     
-  <input id = 'bmi_max' type="number" name="bmi_max"> 
-     
-  <input id = 'bmi_min' type="number" name="bmi_min"> 
-     
-  <input id = 'hemoglobin_a1c' type="number" name="hemoglobin_a1c"> 
-     
-  <input id = 'hemoglobin_a1c_max' type="number" name="hemoglobin_a1c_max"> 
-     
-  <input id = 'hemoglobin_a1c_min' type="number" name="hemoglobin_a1c_min"> 
-     
-  <input id = 'bp_diastolic' type="number" name="bp_diastolic"> 
-     
-  <input id = 'bp_diastolic_max' type="number" name="bp_diastolic_max"> 
-     
-  <input id = 'bp_diastolic_min' type="number" name="bp_diastolic_min"> 
-     
-  <input id = 'bp_systolic' type="number" name="bp_systolic"> 
-     
-  <input id = 'bp_systolic_max' type="number" name="bp_systolic_max"> 
-     
-  <input id = 'bp_systolic_min' type="number" name="bp_systolic_min"> 
-     
-  <input id = 'ldl_cholesterol' type="number" name="ldl_cholesterol"> 
-     
-  <input id = 'ldl_cholesterol_max' type="number" name="ldl_cholesterol_max"> 
-     
-  <input id = 'ldl_cholesterol_min' type="number" name="ldl_cholesterol_min"> 
-     
-  <input id = 'hdl_cholesterol' type="number" name="hdl_cholesterol"> 
-     
-  <input id = 'hdl_cholesterol_max' type="number" name="hdl_cholesterol_max"> 
-     
-  <input id = 'hdl_cholesterol_min' type="number" name="hdl_cholesterol_min"> 
-     
-  <input id = 'triglycerides' type="number" name="triglycerides"> 
-     
-  <input id = 'triglycerides_max' type="number" name="triglycerides_max"> 
-     
-  <input id = 'triglycerides_min' type="number" name="triglycerides_min"> 
-     
-  <input id = 'cholesterol_total' type="number" name="cholesterol_total"> 
-     
-  <input id = 'cholesterol_total_max' type="number" name="cholesterol_total_max"> 
-     
-  <input id = 'cholesterol_total_min' type="number" name="cholesterol_total_min"> 
-     
-  <input id = 'time_last_vist' type="number" name="time_last_vist"> 
-     
-  <input id = 'time_to_first_visit' type="number" name="time_to_first_visit"> 
+  age : 
+  <input id = 'age' type="number" name="age"> <br>
+  smoke (1 - yes, 0 - no): 
+  <input id = 'smoke' type="number" name="smoke"> <br>
+  sex (1 - male, 0 - female): 
+  <input id = 'sex(male)' type="number" name="sex(male)"> <br>
+  creatinine (mg/dL): 
+  <input id = 'creatinine' type="number" name="creatinine"> <br>
+  creatinine (mg/dL) "maximum creatinine in the past half year": 
+  <input id = 'creatinine_max' type="number" name="creatinine_max"> <br>
+  creatinine (mg/dL) "minimum creatinine in the past half year": 
+  <input id = 'creatinine_min' type="number" name="creatinine_min"> <br>
+  BMI (kg/m2): 
+  <input id = 'bmi' type="number" name="bmi"> <br>
+  BMI (kg/m2) "maximum BMI in the past half year": 
+  <input id = 'bmi_max' type="number" name="bmi_max"> <br>
+  BMI (kg/m2) "minimum BMI in the past half year":  
+  <input id = 'bmi_min' type="number" name="bmi_min"> <br>
+  Hemoglobin A1c (%):  
+  <input id = 'hemoglobin_a1c' type="number" name="hemoglobin_a1c"> <br>
+  Hemoglobin A1c (%) "maximum Hemoglobin A1c in the past half year":  
+  <input id = 'hemoglobin_a1c_max' type="number" name="hemoglobin_a1c_max"> <br>
+  Hemoglobin A1c (%) "minimum Hemoglobin A1c in the past half year":  
+  <input id = 'hemoglobin_a1c_min' type="number" name="hemoglobin_a1c_min"> <br>
+  diastolic BP (mmHg): 
+  <input id = 'bp_diastolic' type="number" name="bp_diastolic"> <br>
+  diastolic BP (mmHg) "maximum DBP in the past half year": 
+  <input id = 'bp_diastolic_max' type="number" name="bp_diastolic_max"> <br>
+  diastolic BP (mmHg) "minimum DBP in the past half year": 
+  <input id = 'bp_diastolic_min' type="number" name="bp_diastolic_min"> <br>
+  systolic BP (mmHg): 
+  <input id = 'bp_systolic' type="number" name="bp_systolic"> <br>
+  systolic BP (mmHg) "maximum SBP in the past half year":  
+  <input id = 'bp_systolic_max' type="number" name="bp_systolic_max"> <br>
+  systolic BP (mmHg) "minimum SBP in the past half year":  
+  <input id = 'bp_systolic_min' type="number" name="bp_systolic_min"> <br>
+  LDL cholesterol (mg/dL): 
+  <input id = 'ldl_cholesterol' type="number" name="ldl_cholesterol"> <br>
+  LDL cholesterol (mg/dL) "maximum LDL cholesterol in the past half year": 
+  <input id = 'ldl_cholesterol_max' type="number" name="ldl_cholesterol_max"> <br>
+  LDL cholesterol (mg/dL) "minimum LDL cholesterol in the past half year": 
+  <input id = 'ldl_cholesterol_min' type="number" name="ldl_cholesterol_min"> <br>
+  HDL cholesterol (mg/dL): 
+  <input id = 'hdl_cholesterol' type="number" name="hdl_cholesterol"> <br>
+  HDL cholesterol (mg/dL) "maximum LDL cholesterol in the past half year": 
+  <input id = 'hdl_cholesterol_max' type="number" name="hdl_cholesterol_max"> <br>
+  HDL cholesterol (mg/dL) "minimum LDL cholesterol in the past half year": 
+  <input id = 'hdl_cholesterol_min' type="number" name="hdl_cholesterol_min"> <br>
+  triglycerides (mg/dL): 
+  <input id = 'triglycerides' type="number" name="triglycerides"> <br>
+  triglycerides (mg/dL) "maximum triglycerides in the past half year": 
+  <input id = 'triglycerides_max' type="number" name="triglycerides_max"> <br>
+  triglycerides (mg/dL) "minimum triglycerides in the past half year": 
+  <input id = 'triglycerides_min' type="number" name="triglycerides_min"> <br>
+  Total cholesterol (mg/dL): 
+  <input id = 'cholesterol_total' type="number" name="cholesterol_total"> <br>
+  Total cholesterol (mg/dL) "maximum triglycerides in the past half year": 
+  <input id = 'cholesterol_total_max' type="number" name="cholesterol_total_max"> <br>
+  Total cholesterol (mg/dL) "minimum triglycerides in the past half year": 
+  <input id = 'cholesterol_total_min' type="number" name="cholesterol_total_min"> <br>
+  time since last vist (days): 
+  <input id = 'time_last_vist' type="number" name="time_last_vist"> <br>
+  time since first encounter (days): 
+  <input id = 'time_to_first_visit' type="number" name="time_to_first_visit"> <br>
   
   <button onclick = "classify()" >Classify</button><br>
   <p id = "result"></p>
