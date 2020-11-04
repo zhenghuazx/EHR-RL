@@ -21,6 +21,7 @@ By default, reinforcement learning, attempting to optimize the health outcomes, 
 
 ## Higher Efficacy
 RL based prescriptions significantly improves patients' health outcomes and reduce the number of patients in serious conditions, i.e. SBP > 140 mmHg HbA1c > 8% and FHS CVD risk > 20%.
+
 | __RL-glycemia__                                                                                        |                   |                          |         |
 |--------------------------------------------------------------------------------------------------------|-------------------|--------------------------|---------|
 | Encounters for which algorithm’s recommendation differed from observed Clinician's prescription (N(%)) | 15,578 (13.9)     |                          |         |
@@ -32,7 +33,7 @@ RL based prescriptions significantly improves patients' health outcomes and redu
 |                                                                                                        | RL-BP             | Clinician's prescription | P-value |
 | SBP(Mean(SE))                                                                                          | 131.77(0.06)      | 132.35 (0.11)            | <0.001  |
 | SBP > 140 mmHg (N(%))                                                                                  | 3,256 (16.1)      | 5,390 (26.6)             | <0.001  |
-| <div align="center"> RL-CVD                                                                            |                   |                          |         |
+| <div align="center"> __RL-CVD__                                                                        |                   |                          |         |
 | Encounters for which algorithm’s recommendation differed from observed Clinician's prescription (N(%)) | 946 (1.6)         |                          |         |
 |                                                                                                        | RL-CVD            | Clinician's prescription | P-value |
 | FHS (Mean(SE))                                                                                         | 13.65 (0.26)      | 17.18 (0.36)             | <0.001  |
