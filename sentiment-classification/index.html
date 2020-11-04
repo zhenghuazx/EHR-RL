@@ -59,11 +59,8 @@ function success(data)
 
     for(var i = 0 ; i < lst.length ;i++){
         var parsed_values = (lst[i]).split('\t')
-        key = parseInt(parsed_values[0])
+        key = i
         value = parsed_values[1]
-        
-        if(key == "")
-            continue
         wd_idx[key] = value
         
     }
