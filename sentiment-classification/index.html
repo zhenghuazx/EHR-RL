@@ -73,7 +73,39 @@ async function init()
 
 function classify()
  {
-    const txt  = document.getElementById("txt").value
+    const age  = document.getElementById("age").value
+    const smoke  = document.getElementById("smoke").value
+    const sex  = document.getElementById("sex(male)").value
+    const creatinine  = document.getElementById("creatinine").value
+    const creatinine_max  = document.getElementById("creatinine_max").value
+    const creatinine_min  = document.getElementById("creatinine_min").value
+    const bmi  = document.getElementById("bmi").value
+    const bmi_max  = document.getElementById("bmi_max").value
+    const bmi_min  = document.getElementById("bmi_min").value
+    const hemoglobin_a1c  = document.getElementById("hemoglobin_a1c").value
+    const hemoglobin_a1c_max  = document.getElementById("hemoglobin_a1c_max").value
+    const hemoglobin_a1c_min  = document.getElementById("hemoglobin_a1c_min").value
+    const bp_diastolic  = document.getElementById("bp_diastolic").value
+    const bp_diastolic_max  = document.getElementById("bp_diastolic_max").value
+    const bp_diastolic_min  = document.getElementById("bp_diastolic_min").value
+    const bp_systolic  = document.getElementById("bp_systolic").value
+    const bp_systolic_max  = document.getElementById("bp_systolic_max").value
+    const bp_systolic_min  = document.getElementById("bp_systolic_min").value
+    const ldl_cholesterol  = document.getElementById("ldl_cholesterol").value
+    const ldl_cholesterol_max  = document.getElementById("ldl_cholesterol_max").value
+    const ldl_cholesterol_min  = document.getElementById("ldl_cholesterol_min").value
+    const hdl_cholesterol  = document.getElementById("hdl_cholesterol").value
+    const hdl_cholesterol_max  = document.getElementById("hdl_cholesterol_max").value
+    const hdl_cholesterol_min  = document.getElementById("hdl_cholesterol_min").value
+    const triglycerides  = document.getElementById("triglycerides").value
+    const triglycerides_max  = document.getElementById("triglycerides_max").value
+    const triglycerides_min  = document.getElementById("triglycerides_min").value
+    const cholesterol_total  = document.getElementById("cholesterol_total").value
+    const cholesterol_total_max  = document.getElementById("cholesterol_total_max").value
+    const cholesterol_total_min  = document.getElementById("cholesterol_total_min").value
+    const time_last_vist  = document.getElementById("time_last_vist").value
+    const time_to_first_visit  = document.getElementById("time_to_first_visit").value
+    
     const seq = create_sequences(txt) 
     let input = tf.tensor(seq)
     input = input.expandDims(0)
@@ -94,7 +126,41 @@ window.onload = function (){
  <body>
   <p id = "status"></p>
   <p>Enter a movie review for instance 'awesome/horrible movie' </p> <br>
-  <input id = 'txt' type="text" name="username"> <button onclick = "classify()" >Classify</button><br>
+  <input id = 'age' type="number" name="age"> 
+  <input id = 'smoke' type="number" name="smoke"> 
+  <input id = 'sex(male)' type="number" name="sex(male)"> 
+  <input id = 'creatinine' type="number" name="creatinine"> 
+  <input id = 'creatinine_max' type="number" name="creatinine_max"> 
+  <input id = 'creatinine_min' type="number" name="creatinine_min"> 
+  <input id = 'bmi' type="number" name="bmi"> 
+  <input id = 'bmi_max' type="number" name="bmi_max"> 
+  <input id = 'bmi_min' type="number" name="bmi_min"> 
+  <input id = 'hemoglobin_a1c' type="number" name="hemoglobin_a1c"> 
+  <input id = 'hemoglobin_a1c_max' type="number" name="hemoglobin_a1c_max"> 
+  <input id = 'hemoglobin_a1c_min' type="number" name="hemoglobin_a1c_min"> 
+  <input id = 'bp_diastolic' type="number" name="bp_diastolic"> 
+  <input id = 'bp_diastolic_max' type="number" name="bp_diastolic_max"> 
+  <input id = 'bp_diastolic_min' type="number" name="bp_diastolic_min"> 
+  <input id = 'bp_systolic' type="number" name="bp_systolic"> 
+  <input id = 'bp_systolic_max' type="number" name="bp_systolic_max"> 
+  <input id = 'bp_systolic_min' type="number" name="bp_systolic_min"> 
+  <input id = 'ldl_cholesterol' type="number" name="ldl_cholesterol"> 
+  <input id = 'ldl_cholesterol_max' type="number" name="ldl_cholesterol_max"> 
+  <input id = 'ldl_cholesterol_min' type="number" name="ldl_cholesterol_min"> 
+  <input id = 'hdl_cholesterol' type="number" name="hdl_cholesterol"> 
+  <input id = 'hdl_cholesterol_max' type="number" name="hdl_cholesterol_max"> 
+  <input id = 'hdl_cholesterol_min' type="number" name="hdl_cholesterol_min"> 
+  <input id = 'triglycerides' type="number" name="triglycerides"> 
+  <input id = 'triglycerides_max' type="number" name="triglycerides_max"> 
+  <input id = 'triglycerides_min' type="number" name="triglycerides_min"> 
+  <input id = 'cholesterol,_total' type="number" name="cholesterol,_total"> 
+  <input id = 'cholesterol,_total_max' type="number" name="cholesterol,_total_max"> 
+  <input id = 'cholesterol,_total_min' type="number" name="cholesterol,_total_min"> 
+  <input id = 'time_last_vist' type="number" name="time_last_vist"> 
+  <input id = 'time_to_first_visit' type="number" name="time_to_first_visit"> 
+  
+  <button onclick = "classify()" >Classify</button><br>
   <p id = "result"></p>
+  
 </body>
 </html>
