@@ -1,3 +1,17 @@
+# -*- coding: utf-8 -*-
+import random
+import numpy as np
+from keras.models import Sequential, Model
+from keras.layers import Dense, Dropout, Lambda, Input, Subtract, Add
+from keras.optimizers import Adam
+from keras.utils import to_categorical
+from keras import losses
+import keras.backend as K
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+from sklearn.model_selection import train_test_split
+
 class DQNAgent:
     def __init__(self, state_size, action_size, targets, state_cols, reward_cols, next_state_cols, class_weights=None, dueling=False):
         self.state_size = state_size
