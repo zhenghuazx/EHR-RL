@@ -21,6 +21,7 @@ By default, reinforcement learning, attempting to optimize the health outcomes, 
 
 ## Higher Efficacy
 RL based prescriptions significantly improves patients' health outcomes and reduce the number of patients in serious conditions, i.e. SBP > 140 mmHg HbA1c > 8% and FHS CVD risk > 20%.
+
 | __RL-glycemia__                                                                                        |                   |                          |         |
 |--------------------------------------------------------------------------------------------------------|-------------------|--------------------------|---------|
 | Encounters for which algorithm’s recommendation differed from observed Clinician's prescription (N(%)) | 15,578 (13.9)     |                          |         |
