@@ -267,7 +267,8 @@ window.onload = function (){
 </script>
  <body>
   <p id = "status"></p>
-  <p>Enter a movie review for instance 'awesome/horrible movie' </p> <br>
+  <p>Enter health status and click "Prescribe" button!</p> <br>
+  <hr>
   age : 
   <input id = 'age' type="number" name="age"> <br>
   smoke (1 - yes, 0 - no): 
@@ -333,8 +334,12 @@ window.onload = function (){
   time since first encounter (days): 
   <input id = 'time_to_first_visit' type="number" name="time_to_first_visit"> <br>
   
-  <button onclick = "classify()" >Classify</button><br>
+  <button onclick = "classify()" >Prescribe</button><br>
+  <hr>
+  Recommendation: 
   <p id = "result"></p>
-  
+  <hr> 
+  For this demo, we only consider 32 features/states out of 126 (since it is boring to type in 126 numbers). The treatment history is ignored and assumes patients had no treatment history. 
+  Therefore, the recommendation might be significantly different from the full model and clinical practice.
 </body>
 </html>
