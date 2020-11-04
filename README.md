@@ -50,7 +50,7 @@ RL based prescriptions significantly improves patients' health outcomes and redu
 
 ## Less prescriptions
 Both AI and doctor has similar prescriotive distribution but AI tends to prescribe less than doctors:
-![Prescriptive Distribution](https://github.com/zhenghuazx/EHR-RL/blob/master/distribution3.svg)
+![Prescriptive Distribution](https://github.com/zhenghuazx/EHR-RL/blob/master/distribution1.png)
 
 ## Consistently performance acrosss different groups
 <img src="subgroup_table.png" alt="drawing" width="700"/>
