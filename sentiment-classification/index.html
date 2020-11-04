@@ -114,7 +114,7 @@ async function init()
     await loadInput()
     console.log('Finish loading dicionary')
     console.log('Start loading model') 
-    model = await tf.loadLayersModel('model/model_RL.json')
+    model = await tf.loadLayersModel('model/model.json')
     document.getElementById('status').innerHTML = 'Model loaded'
     console.log('Finish loading model') 
 }
