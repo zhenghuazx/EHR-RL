@@ -8,9 +8,6 @@ from keras.utils import to_categorical
 from keras import losses
 import keras.backend as K
 import pandas as pd
-import seaborn as sns
-import matplotlib.pyplot as plt
-from sklearn.model_selection import train_test_split
 
 class DQNAgent:
     def __init__(self, state_size, action_size, targets, state_cols, reward_cols, next_state_cols, class_weights=None, dueling=False):
