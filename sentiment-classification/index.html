@@ -254,7 +254,7 @@ function classify()
     let input = tf.tensor(state_values)
     input = input.expandDims(0)
     pred = model.predict(input)
-    result = pred.dataSync()[0]
+    result = pred.dataSync()
     const output = word_index[indexOfMax(result)]
      document.getElementById('result').innerHTML = output
  }
