@@ -32,7 +32,7 @@ RL based prescriptions significantly improves patients' health outcomes and redu
 |                                                                                                        | RL-BP             | Clinician's prescription | P-value |
 | SBP(Mean(SE))                                                                                          | 131.77(0.06)      | 132.35 (0.11)            | <0.001  |
 | SBP > 140 mmHg (N(%))                                                                                  | 3,256 (16.1)      | 5,390 (26.6)             | <0.001  |
-| RL-CVD                                                                                                 |                   |                          |         |
+| <div align="center"> RL-CVD                                                                            |                   |                          |         |
 | Encounters for which algorithm’s recommendation differed from observed Clinician's prescription (N(%)) | 946 (1.6)         |                          |         |
 |                                                                                                        | RL-CVD            | Clinician's prescription | P-value |
 | FHS (Mean(SE))                                                                                         | 13.65 (0.26)      | 17.18 (0.36)             | <0.001  |
