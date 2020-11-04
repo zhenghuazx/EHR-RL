@@ -7,6 +7,8 @@ The research was conducted by Hua Zheng and supervised by Professor Wei Xie, Pro
 
 # Outline of our study:
 
+We investigated the ability of a prescription algorithm of artificial intelligence (AI) to determine the best drugs/treatment for the chronic disease of type 2 diabetes to prevent hyperglycemia, hypertension and CV disease. We compared the results of the recommendations of the algorithm to decisions made by clinicians for their patients. The study demonstrated that the algorithm brought equal or better results than the doctors' recommendations for these patients.
+
 * AIMS: Comorbid chronic conditions are common among people with type 2 diabetes. We developed an Artificial Intelligence algorithm, based on Reinforcement Learning (RL), for personalized diabetes and multimorbidity management with strong potential to improve health outcomes relative to current clinical practice.
 
 * METHODS: We modeled glycemia, blood pressure and cardiovascular disease (CVD) risk as health outcomes using a retrospective cohort of 16,665 patients with type 2 diabetes from New York University Langone Health ambulatory care electronic health records in 2009 to 2017. We trained a RL prescription algorithm that recommends a treatment regimen optimizing patients’ cumulative health outcomes using their individual characteristics and medical history at each encounter. The RL recommendations were evaluated on an independent subset of patients. 
