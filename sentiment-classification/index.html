@@ -42,7 +42,7 @@ function success2(data)
         max_value = parsed_values[1]
         min_value = parsed_values[2]
         avg_value = parsed_values[3]
-        initial_values[i] = (parseFloat(avg_value) - parseFloat(min_value)) / parseFloat(max_value)
+        initial_values[i] = 0 //(parseFloat(avg_value) - parseFloat(min_value)) / parseFloat(max_value)
         weights[i] = [max_value, min_value, avg_value]
         wd_idx[state] = i
         
