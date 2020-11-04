@@ -56,3 +56,7 @@ Both AI and doctor has similar prescriotive distribution but AI tends to prescri
 
 ## Consistently performance acrosss different groups
 <img src="subgroup_table.png" alt="drawing" width="700"/>
+
+# Citation:
+Zheng, H., et al., In Press. Personalized multimorbidity management for patients with type 2 diabetes using reinforcement learning of electronic health records. Drugs.
+
