@@ -23,7 +23,7 @@ async function loadDict()
   dataType: 'text',}).done(success);
 }
 
-async function loadDict()
+async function loadInput()
 {
   await $.ajax({
   url: 'input.csv',
@@ -111,6 +111,7 @@ async function init()
     document.getElementById('status').innerHTML = 'Loading model ...'
     console.log('Start loading dicionary')
     await loadDict()
+    await loadInput()
     console.log('Finish loading dicionary')
     console.log('Start loading model') 
     model = await tf.loadModel('model/model.json')
@@ -271,36 +272,67 @@ window.onload = function (){
   <p id = "status"></p>
   <p>Enter a movie review for instance 'awesome/horrible movie' </p> <br>
   <input id = 'age' type="number" name="age"> 
+     
   <input id = 'smoke' type="number" name="smoke"> 
+     
   <input id = 'sex(male)' type="number" name="sex(male)"> 
+     
   <input id = 'creatinine' type="number" name="creatinine"> 
+     
   <input id = 'creatinine_max' type="number" name="creatinine_max"> 
+     
   <input id = 'creatinine_min' type="number" name="creatinine_min"> 
+     
   <input id = 'bmi' type="number" name="bmi"> 
+     
   <input id = 'bmi_max' type="number" name="bmi_max"> 
+     
   <input id = 'bmi_min' type="number" name="bmi_min"> 
+     
   <input id = 'hemoglobin_a1c' type="number" name="hemoglobin_a1c"> 
+     
   <input id = 'hemoglobin_a1c_max' type="number" name="hemoglobin_a1c_max"> 
+     
   <input id = 'hemoglobin_a1c_min' type="number" name="hemoglobin_a1c_min"> 
+     
   <input id = 'bp_diastolic' type="number" name="bp_diastolic"> 
+     
   <input id = 'bp_diastolic_max' type="number" name="bp_diastolic_max"> 
+     
   <input id = 'bp_diastolic_min' type="number" name="bp_diastolic_min"> 
+     
   <input id = 'bp_systolic' type="number" name="bp_systolic"> 
+     
   <input id = 'bp_systolic_max' type="number" name="bp_systolic_max"> 
+     
   <input id = 'bp_systolic_min' type="number" name="bp_systolic_min"> 
+     
   <input id = 'ldl_cholesterol' type="number" name="ldl_cholesterol"> 
+     
   <input id = 'ldl_cholesterol_max' type="number" name="ldl_cholesterol_max"> 
+     
   <input id = 'ldl_cholesterol_min' type="number" name="ldl_cholesterol_min"> 
+     
   <input id = 'hdl_cholesterol' type="number" name="hdl_cholesterol"> 
+     
   <input id = 'hdl_cholesterol_max' type="number" name="hdl_cholesterol_max"> 
+     
   <input id = 'hdl_cholesterol_min' type="number" name="hdl_cholesterol_min"> 
+     
   <input id = 'triglycerides' type="number" name="triglycerides"> 
+     
   <input id = 'triglycerides_max' type="number" name="triglycerides_max"> 
+     
   <input id = 'triglycerides_min' type="number" name="triglycerides_min"> 
+     
   <input id = 'cholesterol,_total' type="number" name="cholesterol,_total"> 
+     
   <input id = 'cholesterol,_total_max' type="number" name="cholesterol,_total_max"> 
+     
   <input id = 'cholesterol,_total_min' type="number" name="cholesterol,_total_min"> 
+     
   <input id = 'time_last_vist' type="number" name="time_last_vist"> 
+     
   <input id = 'time_to_first_visit' type="number" name="time_to_first_visit"> 
   
   <button onclick = "classify()" >Classify</button><br>
