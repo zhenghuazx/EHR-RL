@@ -50,7 +50,7 @@ RL based prescriptions significantly improves patients' health outcomes and redu
 
 ## Less prescriptions
 Both AI and doctor has similar prescriotive distribution but AI tends to prescribe less than doctors:
-<img src="distribution1.png" alt="drawing" width="700"/>
+<img src="distribution3.svg" alt="drawing" width="850"/>
 
 ## Consistently performance acrosss different groups
 <img src="subgroup_table.png" alt="drawing" width="700"/>
