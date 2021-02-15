@@ -58,5 +58,4 @@ Both AI and doctor has similar prescriotive distribution but AI tends to prescri
 <img src="subgroup_table.png" alt="drawing" width="700"/>
 
 # Citation:
-Zheng, H., et al., In Press. Personalized multimorbidity management for patients with type 2 diabetes using reinforcement learning of electronic health records. Drugs.
-
+Zheng, H., Ryzhov, I. O., Xie, W., & Zhong, J. (2021). Personalized Multimorbidity Management for Patients with Type 2 Diabetes Using Reinforcement Learning of Electronic Health Records. Drugs, 1–12. Advance online publication. https://doi.org/10.1007/s40265-020-01435-4
